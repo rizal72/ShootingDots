@@ -1,3 +1,6 @@
+input.onSound(DetectedSound.Loud, function () {
+	
+})
 input.onButtonPressed(Button.A, function () {
     NAVE.move(-1)
 })
@@ -20,11 +23,6 @@ function Shoot () {
     }
     shooting = 0
 }
-input.onSound(DetectedSound.Loud, function () {
-    if (!(shooting)) {
-        Shoot()
-    }
-})
 input.onButtonPressed(Button.AB, function () {
     if (!(shooting)) {
         Shoot()
