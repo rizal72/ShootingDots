@@ -1,6 +1,3 @@
-input.onSound(DetectedSound.Loud, function () {
-	
-})
 input.onButtonPressed(Button.A, function () {
     NAVE.move(-1)
 })
@@ -10,7 +7,7 @@ function Shoot () {
     COLPO.set(LedSpriteProperty.Brightness, 20)
     for (let index = 0; index < 4; index++) {
         COLPO.change(LedSpriteProperty.Y, -1)
-        basic.pause(50)
+        basic.pause(20)
         if (COLPO.isTouching(NEMICO) || NEMICO.isTouching(COLPO)) {
             NEMICO.delete()
             soundExpression.happy.play()
@@ -23,6 +20,9 @@ function Shoot () {
     }
     shooting = 0
 }
+input.onSound(DetectedSound.Loud, function () {
+	
+})
 input.onButtonPressed(Button.AB, function () {
     if (!(shooting)) {
         Shoot()
